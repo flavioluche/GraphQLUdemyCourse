@@ -1,0 +1,56 @@
+#query GetUser{
+  #user(id: "krBJvWH"){
+    #id
+  	#firstName
+  	#age
+    #...userInfo
+    #company{
+      #...companyInfo
+    #}
+  #}
+#}
+
+query GetCompanyUsers{
+  company(id:"2"){
+    ...companyInfo
+    users{
+      ...userInfo
+    }
+  }
+}
+
+fragment userInfo on User{
+  id
+  firstName
+  age
+}
+
+fragment companyInfo on Company{
+  id
+  name
+  description
+}
+
+#mutation{
+  	#addUser(firstName: "Jojota", age: 32, companyId:"1"){
+      #id,
+    	#firstName,
+      #age,
+    	#company {
+    	  #name
+    	#}
+    #}
+  	#deleteUser (id: "p_h1JcR"){
+    	#id
+    	#firstName
+    	#age
+  	#}
+		#editUser(id:"s6U9lf2", companyId:"2"){
+    	#id,
+    	#firstName,
+      #age,
+    	#company {
+    	  #name
+    	#}
+    #} 	
+#}
