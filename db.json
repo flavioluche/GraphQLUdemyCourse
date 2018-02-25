@@ -47,12 +47,40 @@
     {
       "id": "1",
       "name": "Apple",
-      "description": "iphone"
+      "description": "iphone",
+      "workplaces":[
+        {
+          "city": "San Francisco",
+          "phone": 984753222
+        },
+        {
+          "city": "California",
+          "phone": 984753223
+        },
+        {
+          "city": "Sydney",
+          "phone": 984753224
+        }
+      ]
     },
     {
       "id": "2",
       "name": "Google",
-      "description": "search"
+      "description": "search",
+      "workplaces":[
+        {
+          "city": "San Francisco",
+          "phone": 847532221
+        },
+        {
+          "city": "Minesota",
+          "phone": 847532222
+        },
+        {
+          "city": "Milan",
+          "phone": 847532223
+        }
+      ]
     }
   ]
 }

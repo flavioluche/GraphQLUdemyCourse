@@ -15,12 +15,21 @@ const {
     {id:'47', name:'Samantha', age:21}
 ] */
 
+const WorkplacesType = new GraphQLObjectType({
+    name:'Workplaces',
+    fields: () => ({
+        city: {type: GraphQLString},
+        phone: {type: GraphQLInt}
+    })
+});
+
 const CompanyType = new GraphQLObjectType({
     name:'Company',
     fields: () => ({
         id: {type: GraphQLString},
         name: {type: GraphQLString},
         description: {type: GraphQLString},
+        workplaces: {type: new GraphQLList(WorkplacesType)},
         users:{
             type: new GraphQLList(UserType),
             resolve(parentValue, args){
